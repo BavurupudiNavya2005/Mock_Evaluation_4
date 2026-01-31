@@ -4,7 +4,7 @@ const supabase = require("../config/supabase");
 
 router.post("/create", async(req,res) => {
     const { customer_id, vehicle_id, location, distance_Km, passengers} = req.body;
-    const { data.error} = await
+    const { data,error} = await
     supabase.from("trips".insert([{
         customer_id, vehicle_id, location, distance_Km, passengers
     }]));
